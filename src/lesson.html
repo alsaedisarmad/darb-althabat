@@ -101,7 +101,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .src{display:block;font-size:.8rem;font-weight:400;color:var(--ink2)}
 
 /* buttons */
-.btn{--bg:var(--emerald);--fg:var(--on-emerald);display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;background:var(--bg);color:var(--fg);font-weight:800;padding:12px 22px;border-radius:15px;position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.3,1.7,.5,1),box-shadow .25s,filter .2s;box-shadow:0 6px 0 -1px color-mix(in srgb,var(--bg) 60%,#000),0 12px 22px -12px var(--bg);min-height:48px}
+.btn{text-decoration:none;--bg:var(--emerald);--fg:var(--on-emerald);display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;background:var(--bg);color:var(--fg);font-weight:800;padding:12px 22px;border-radius:15px;position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.3,1.7,.5,1),box-shadow .25s,filter .2s;box-shadow:0 6px 0 -1px color-mix(in srgb,var(--bg) 60%,#000),0 12px 22px -12px var(--bg);min-height:48px}
 .btn:hover{filter:brightness(1.06)}
 .btn:active{transform:translateY(4px) scale(.98);box-shadow:0 2px 0 -1px color-mix(in srgb,var(--bg) 60%,#000)}
 .btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -519,10 +519,19 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
 .check{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;margin:8px 0}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.imgsheet{position:fixed;inset:0;z-index:85;display:grid;place-items:center;padding:16px;background:color-mix(in srgb,var(--ink) 80%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s}
+.imgsheet.on{opacity:1;pointer-events:auto}
+.imgsheet .box{background:var(--paper);border-radius:28px;padding:18px;width:min(640px,100%);max-height:100%;overflow:auto;text-align:center;transform:scale(.92);transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.imgsheet.on .box{transform:none}
+.imgsheet img{width:100%;border-radius:18px;display:block;-webkit-touch-callout:default;user-select:auto}
+.imgsheet p{font-weight:800;margin:12px 0}
+#printArea{display:none}
+@page{margin:12mm}
 @media print{
-  body *{visibility:hidden}
-  .print-me,.print-me *{visibility:visible}
-  .print-me{position:fixed;inset:0;margin:auto;width:180mm;height:120mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{height:auto!important;overflow:visible!important;background:#fff!important}
+  body>*:not(#printArea){display:none!important}
+  #printArea{display:block!important;text-align:center}
+  #printArea img{width:100%;max-width:180mm;height:auto}
 }
 </style>
 </head>
@@ -1119,7 +1128,7 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
       <label class="note" for="tkName">اسمك</label>
       <input class="field" id="tkName" placeholder="اكتبي اسمك" maxlength="30">
       <div class="deeds" id="deeds" style="margin-top:12px"></div>
-      <div class="row" style="margin-top:12px;justify-content:space-between"><div class="swatches" id="swatches"></div><button class="btn s sm" id="tkPrint"><svg><use href="#i-print"/></svg> طباعة البطاقة</button></div>
+      <div class="row" style="margin-top:12px;justify-content:space-between"><div class="swatches" id="swatches"></div><div class="row"><button class="btn s sm" id="tkPrint"><svg><use href="#i-print"/></svg> طباعة</button><button class="btn sm" id="tkSave"><svg viewBox="0 0 24 24"><path d="M12 3.5v11M7.5 10l4.5 4.5 4.5-4.5M4.5 16.5v3h15v-3"/></svg> حفظ صورة / مشاركة</button></div></div>
     </div>
     <div class="ticket" id="ticket">
       <div><span class="tag s">بطاقة خروج · سورة هود</span><div class="tq" style="margin-top:8px">﴿إِنَّ الْحَسَنَاتِ يُذْهِبْنَ السَّيِّئَاتِ﴾</div></div>
@@ -1196,6 +1205,8 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
 
 <div class="big-timer" id="bigTimer" hidden><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" stroke="var(--paper2)"/><circle class="fg" id="btFg" cx="50" cy="50" r="45" stroke-dasharray="282.7" stroke-dashoffset="0"/></svg><span class="num" id="btNum">١:٠٠</span><button class="x" id="btX" aria-label="إغلاق المؤقت">×</button></div>
 <div class="spot" id="spot"><div class="box"><small id="spotLabel">الطالبة المختارة</small><div class="nm" id="spotName">—</div><div class="row" style="justify-content:center;margin-top:10px"><button class="btn s sm" id="spotAgain"><svg><use href="#i-dice"/></svg> مرة أخرى</button><button class="btn ghost sm" id="spotClose">إغلاق</button></div></div></div>
+<div class="imgsheet" id="imgSheet" role="dialog" aria-label="بطاقة الخروج"><div class="box"><img id="imgSheetImg" alt="بطاقة الخروج"><p id="imgSheetMsg">اضغطي مطولًا على الصورة، ثم اختاري «حفظ في الصور» أو «طباعة».</p><div class="row" style="justify-content:center"><a class="btn sm" id="imgSheetDl" download="بطاقة-الخروج.png">تنزيل الصورة</a><button class="btn ghost sm" id="imgSheetClose">إغلاق</button></div></div></div>
+<div id="printArea"><img id="printImg" alt=""></div>
 <canvas id="fx"></canvas>
 <div class="toast" id="toast"></div>
 <audio id="aud-recite" preload="metadata" src="__AUDIO1__"></audio>
@@ -1297,7 +1308,7 @@ document.addEventListener("keydown",e=>{
   else if(e.key==="t"||e.key==="T")startTimer(60);
   else if(e.key==="r"||e.key==="R")pick();
   else if(e.key==="f"||e.key==="F")toggleFull();
-  else if(e.key==="Escape"){closeDrawer();$("#spot").classList.remove("on")}
+  else if(e.key==="Escape"){closeDrawer();$("#spot").classList.remove("on");$("#imgSheet").classList.remove("on")}
 });
 let sx=null,sy=0;
 $("#stage").addEventListener("touchstart",e=>{if(e.target.closest("canvas,input,.pool,.bin,.seek"))return;sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
@@ -1657,7 +1668,52 @@ function renderTk(){$("#tkName").value=tk.n;$("#tkOutName").textContent=tk.n||"�
 $("#tkName").oninput=e=>{tk.n=e.target.value;renderTk()};
 $$("#deeds .chip").forEach(c=>c.onclick=()=>{tk.d=+c.dataset.i;renderTk();sfx.ok();const t=$("#ticket");t.animate([{transform:"scale(.97) rotate(-1deg)"},{transform:"none"}],{duration:450,easing:"cubic-bezier(.3,1.6,.5,1)"})});
 $$("#swatches button").forEach(b=>b.onclick=()=>{tk.c=+b.dataset.i;renderTk()});
-$("#tkPrint").onclick=()=>{if(tk.d<0){toast("اختاري عملًا أولًا");return}$("#ticket").classList.add("print-me");burstAt($("#ticket"),60);sfx.win();setTimeout(()=>{window.print();$("#ticket").classList.remove("print-me")},400)};
+/* the card is pre-drawn to an image so print and share run directly inside the tap (required by iPhone Safari) */
+const LOGO_SRC="__LOGO__";let cardURL="",cardFile=null,cardJob=0,cardTimer=null;
+const logoImg=new Image();logoImg.src=LOGO_SRC;
+function wrapLines(c,text,maxW){const out=[];let line="";text.split(" ").forEach(w=>{const t=line?line+" "+w:w;if(c.measureText(t).width>maxW&&line){out.push(line);line=w}else line=t});if(line)out.push(line);return out}
+async function drawCard(){
+  const job=++cardJob;
+  try{await Promise.all(["700 76px Kufi","84px Mushaf","800 46px Body","700 34px Body","400 32px Body"].map(f=>document.fonts.load(f)))}catch(e){}
+  if(!logoImg.complete)await new Promise(r=>{logoImg.onload=logoImg.onerror=r});
+  if(job!==cardJob)return;
+  const W=1600,H=1000,cv=document.createElement("canvas");cv.width=W;cv.height=H;const c=cv.getContext("2d");
+  c.fillStyle="#fff";c.fillRect(0,0,W,H);
+  c.save();c.beginPath();c.roundRect?c.roundRect(0,0,W,H,64):c.rect(0,0,W,H);c.clip();
+  c.fillStyle=TK[tk.c];c.fillRect(0,0,W,H);
+  c.strokeStyle="rgba(255,255,255,.11)";c.lineWidth=3;
+  for(let x=0;x<W+90;x+=90)for(let y=0;y<H+90;y+=90){c.save();c.translate(x,y);c.strokeRect(-17,-17,34,34);c.rotate(Math.PI/4);c.strokeRect(-17,-17,34,34);c.restore()}
+  c.direction="rtl";c.textAlign="right";c.textBaseline="alphabetic";const R=W-100;
+  c.font="700 34px Body";const tag="بطاقة خروج · سورة هود",tw=c.measureText(tag).width+56;
+  c.fillStyle="#D9961F";c.beginPath();c.roundRect?c.roundRect(R-tw,80,tw,64,32):c.rect(R-tw,80,tw,64);c.fill();
+  c.fillStyle="#2a1d02";c.fillText(tag,R-28,124);
+  c.fillStyle="#FFF8EA";c.font="84px Mushaf";c.fillText("﴿إِنَّ الْحَسَنَاتِ يُذْهِبْنَ السَّيِّئَاتِ﴾",R,300);
+  c.font="700 76px Kufi";c.fillText(tk.n||"اسم الطالبة",R,540);
+  c.font="800 46px Body";const deed=tk.d>=0?"عهدي هذا الأسبوع: "+DEEDS[tk.d]:"اختاري عملك من القائمة";
+  wrapLines(c,deed,W-200).slice(0,2).forEach((l,i)=>c.fillText(l,R,640+i*68));
+  c.globalAlpha=.9;c.font="400 32px Body";c.fillText("معلمة المادة: أ. فاطمة الطلحي",R,880);c.fillText("مديرة المدرسة: أ. آمال باربود",R,930);c.globalAlpha=1;
+  if(logoImg.naturalWidth)c.drawImage(logoImg,100,790,200,200*logoImg.naturalHeight/logoImg.naturalWidth);
+  c.restore();
+  cardURL=cv.toDataURL("image/png");$("#printImg").src=cardURL;$("#imgSheetImg").src=cardURL;$("#imgSheetDl").href=cardURL;
+  cv.toBlob(b=>{if(job===cardJob&&b)try{cardFile=new File([b],"بطاقة-الخروج.png",{type:"image/png"})}catch(e){cardFile=null}},"image/png");
+}
+function queueCard(){clearTimeout(cardTimer);cardTimer=setTimeout(drawCard,200)}
+const _renderTk=renderTk;renderTk=function(){_renderTk();queueCard()};
+const inApp=/FBAN|FBAV|Instagram|Line\/|Snapchat|TikTok|GSA\//.test(navigator.userAgent);
+function showSheet(msg){if(msg)$("#imgSheetMsg").textContent=msg;$("#imgSheet").classList.add("on")}
+function ready(){if(tk.d<0){toast("اختاري عملًا أولًا");return false}if(!cardURL){toast("لحظة… يتم تجهيز البطاقة");drawCard();return false}return true}
+$("#tkPrint").onclick=()=>{
+  if(!ready())return;
+  if(inApp||typeof window.print!=="function"){showSheet("هذا المتصفح لا يدعم الطباعة. اضغطي مطولًا على الصورة واختاري «طباعة» أو «حفظ في الصور»، أو افتحي الرابط في Safari.");return}
+  try{window.print()}catch(e){showSheet()}
+};
+$("#tkSave").onclick=()=>{
+  if(!ready())return;sfx.win();burstAt($("#ticket"),50);
+  if(cardFile&&navigator.canShare&&navigator.canShare({files:[cardFile]})){navigator.share({files:[cardFile],title:"بطاقة الخروج"}).catch(err=>{if(err&&err.name!=="AbortError")showSheet()});return}
+  showSheet();
+};
+$("#imgSheetClose").onclick=()=>$("#imgSheet").classList.remove("on");
+$("#imgSheet").addEventListener("click",e=>{if(e.target.id==="imgSheet")$("#imgSheet").classList.remove("on")});
 renderTk();
 
 /* ---------- question builder ---------- */
