@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0F5245">
-<meta name="description" content="درب الثبات: درس تفاعلي في تفسير سورة هود من الآية ١١٢ إلى ١٢٣. إعداد المعلمة فاطمة الطلحي.">
-<title>درب الثبات · سورة هود ١١٢–١٢٣</title>
+<meta name="description" content="طريق الاستقامة: درس تفاعلي في تفسير سورة هود من الآية ١١٢ إلى ١٢٣. إعداد المعلمة فاطمة الطلحي.">
+<title>طريق الاستقامة · سورة هود ١١٢–١٢٣</title>
 <style>
 @font-face{font-family:"Kufi";src:url(__F_KUFI__) format("truetype");font-weight:400 700;font-display:swap}
 @font-face{font-family:"Body";src:url(__F_TAJ_R__) format("truetype");font-weight:400;font-display:swap}
@@ -359,15 +359,16 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .range-row output{font-family:"Kufi";font-size:1.6rem;color:var(--coral);min-width:2ch;text-align:center}
 
 /* ---------- flip ---------- */
-.flip{perspective:1100px;border:0;background:none;padding:0;min-height:240px;text-align:start}
-.flip .in{position:relative;width:100%;height:100%;min-height:240px;transition:transform .8s cubic-bezier(.3,1.3,.4,1);transform-style:preserve-3d}
+.flip{perspective:1100px;border:0;background:none;padding:0;min-height:240px;text-align:start;display:block;width:100%;color:var(--ink)}
+.flip .in{position:relative;display:grid;width:100%;height:100%;min-height:inherit;transition:transform .8s cubic-bezier(.3,1.3,.4,1);transform-style:preserve-3d;-webkit-transform-style:preserve-3d}
 .flip.on .in{transform:rotateY(180deg)}
-.flip .f,.flip .b{position:absolute;inset:0;border-radius:24px;padding:22px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;gap:8px;border:1.5px solid var(--line)}
+.flip .f,.flip .b{grid-area:1/1;position:relative;border-radius:24px;padding:22px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;gap:10px;border:1.5px solid var(--line);transition:visibility 0s .4s,opacity 0s .4s}
 .flip .f{background:var(--card)}
-.flip .b{transform:rotateY(180deg);background:var(--emerald);color:var(--on-emerald);border-color:var(--emerald)}
-.flip .f b{font-family:"Kufi";font-size:1.3rem;font-weight:700;line-height:1.6}
-.flip .b p{margin:0;font-weight:700;font-size:1.06rem;line-height:1.9}
-.flip .hint2{font-size:.8rem;color:var(--ink2);display:flex;gap:6px;align-items:center}
+.flip .b{transform:rotateY(180deg);background:var(--emerald);color:var(--on-emerald);border-color:var(--emerald);visibility:hidden;opacity:0}
+.flip.on .f{visibility:hidden;opacity:0}.flip.on .b{visibility:visible;opacity:1}
+.flip .f b{font-family:"Body";font-size:1.35rem;font-weight:800;line-height:1.7;color:var(--ink)}.flip .tag{align-self:flex-start}
+.flip .b p{margin:0;font-weight:700;font-size:1.12rem;line-height:2;text-align:right}
+.flip .hint2{font-size:.92rem;font-weight:700;color:var(--ink2);display:flex;gap:6px;align-items:center;line-height:1.6}
 
 /* ---------- heart ---------- */
 .heart-stage{position:relative;min-height:430px}
@@ -568,9 +569,9 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
 <header class="top">
   <div class="moe" role="img" aria-label="شعار وزارة التعليم"></div>
   <div class="sep"></div>
-  <div class="crumb"><b id="crumbTitle">درب الثبات</b><span>القرآن الكريم وتفسيره · الوحدة الرابعة · الدرس العاشر</span></div>
+  <div class="crumb"><b id="crumbTitle">طريق الاستقامة</b><span>القرآن الكريم وتفسيره · الوحدة الرابعة · الدرس العاشر</span></div>
   <div class="tools">
-    <div class="score-pill" id="scorePill" title="نقاط الفرق"></div>
+    <div class="score-pill" id="scorePill" title="نقاط المجموعات"></div>
     <button class="ib" id="btnTimer" title="المؤقت" aria-label="المؤقت"><svg><use href="#i-timer"/></svg></button>
     <button class="ib" id="btnPick" title="اختيار طالبة" aria-label="اختيار طالبة عشوائيًا"><svg><use href="#i-dice"/></svg></button>
     <button class="ib" id="btnSound" title="الأصوات" aria-label="تشغيل أو إيقاف الأصوات"><svg><use href="#i-sound"/></svg></button>
@@ -584,11 +585,11 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
 <main class="stage" id="stage">
 
 <!-- 0 COVER -->
-<section class="station" data-title="دربُ الثبات" data-chap="تهيئة">
+<section class="station" data-title="طريقُ الاستقامة" data-chap="تهيئة">
 <div class="wrap cover">
   <div>
     <div class="badge-row"><span class="tag">الوحدة الرابعة</span><span class="tag s">الدرس العاشر</span><span class="tag ghost">سورة هود · ١١٢–١٢٣</span></div>
-    <p class="brand">دربُ الثبات</p>
+    <p class="brand">طريقُ الاستقامة</p>
     <h1><span class="orn">﴿</span>فَاسْتَقِمْ كَمَا أُمِرْتَ<span class="orn">﴾</span></h1>
     <p class="sub">تفسير سورة هود من الآية ١١٢ إلى الآية ١٢٣</p>
     <p class="lead" style="margin-top:6px">طريقٌ واحدٌ مستقيم، وحوله سُبلٌ كثيرة. نتلو الآيات ونفهمها، ثم نختار خطوةً نثبت بها.</p>
@@ -711,30 +712,9 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
 </section>
 
 <!-- 5 GOALS + KWL -->
-<section class="station" data-title="بوصلة الدرس" data-chap="تهيئة">
-<div class="wrap">
-  <div class="kicker"><span class="no">٠٤</span><span class="rule"></span>أهداف الدرس وجدول التعلم</div>
-  <h2 class="title">إلى أين <em>نمضي</em> اليوم؟</h2>
-  <div class="grid2 even">
-    <div>
-      <div class="goal"><span class="n" style="background:var(--teal)">١</span><p>نعلّل سبب نزول قوله تعالى: <span class="q" style="color:var(--emerald)">﴿وَأَقِمِ الصَّلَاةَ طَرَفَيِ النَّهَارِ وَزُلَفًا مِّنَ اللَّيْلِ﴾</span></p></div>
-      <div class="goal"><span class="n" style="background:var(--saffron)">٢</span><p>نبيّن معاني المفردات: لا تركنوا، طرفي النهار، زُلفًا من الليل، الجِنّة.</p></div>
-      <div class="goal"><span class="n" style="background:var(--coral)">٣</span><p>نستنتج ثمرة من ثمرات الأمر بالمعروف والنهي عن المنكر من قوله تعالى: <span class="q" style="color:var(--emerald)">﴿وَمَا كَانَ رَبُّكَ لِيُهْلِكَ الْقُرَىٰ بِظُلْمٍ وَأَهْلُهَا مُصْلِحُونَ﴾</span></p></div>
-    </div>
-    <div class="card">
-      <h3>جدول التعلم</h3>
-      <p class="note" style="margin-top:-4px">نملأ العمودين الأولين الآن، ونعود إلى «ماذا تعلمت؟» في الختام. يُحفظ الجدول على هذا الجهاز.</p>
-      <div class="kwl" id="kwl"></div>
-      <div class="kadd"><input id="kwlIn" placeholder="اكتبي فكرة قصيرة…" maxlength="80"><select id="kwlCol"><option value="0">ماذا أعرف؟</option><option value="1">ماذا أريد أن أعرف؟</option><option value="2">ماذا تعلمت؟</option></select><button class="btn sm" id="kwlAdd">إضافة</button></div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- 6 VERSES -->
 <section class="station" data-title="الآيات" data-chap="نتلو ونفهم">
 <div class="wrap">
-  <div class="kicker"><span class="no">٠٥</span><span class="rule"></span>التلاوة والمعنى الإجمالي</div>
+  <div class="kicker"><span class="no">٠٤</span><span class="rule"></span>التلاوة والمعنى الإجمالي</div>
   <h2 class="title">اثنتا عشرة آية… <em>وثلاث عدسات</em></h2>
   <div class="grid2">
     <div>
@@ -763,6 +743,27 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
       <div class="word-list" id="tfWords"></div>
       <div class="row" style="margin-top:14px"><button class="btn sm ghost" id="tfPrev"><svg><use href="#i-prev"/></svg> السابقة</button><button class="btn sm ghost" id="tfNext">التالية <svg><use href="#i-next"/></svg></button></div>
     </aside>
+  </div>
+</div>
+</section>
+
+<!-- 6 VERSES -->
+<section class="station" data-title="بوصلة الدرس" data-chap="نتلو ونفهم">
+<div class="wrap">
+  <div class="kicker"><span class="no">٠٥</span><span class="rule"></span>أهداف الدرس وجدول التعلم</div>
+  <h2 class="title">إلى أين <em>نمضي</em> اليوم؟</h2>
+  <div class="grid2 even">
+    <div>
+      <div class="goal"><span class="n" style="background:var(--teal)">١</span><p>نعلّل سبب نزول قوله تعالى: <span class="q" style="color:var(--emerald)">﴿وَأَقِمِ الصَّلَاةَ طَرَفَيِ النَّهَارِ وَزُلَفًا مِّنَ اللَّيْلِ﴾</span></p></div>
+      <div class="goal"><span class="n" style="background:var(--saffron)">٢</span><p>نبيّن معاني المفردات: لا تركنوا، طرفي النهار، زُلفًا من الليل، الجِنّة.</p></div>
+      <div class="goal"><span class="n" style="background:var(--coral)">٣</span><p>نستنتج ثمرة من ثمرات الأمر بالمعروف والنهي عن المنكر من قوله تعالى: <span class="q" style="color:var(--emerald)">﴿وَمَا كَانَ رَبُّكَ لِيُهْلِكَ الْقُرَىٰ بِظُلْمٍ وَأَهْلُهَا مُصْلِحُونَ﴾</span></p></div>
+    </div>
+    <div class="card">
+      <h3>جدول التعلم</h3>
+      <p class="note" style="margin-top:-4px">نملأ العمودين الأولين الآن، ونعود إلى «ماذا تعلمت؟» في الختام. يُحفظ الجدول على هذا الجهاز.</p>
+      <div class="kwl" id="kwl"></div>
+      <div class="kadd"><input id="kwlIn" placeholder="اكتبي فكرة قصيرة…" maxlength="80"><select id="kwlCol"><option value="0">ماذا أعرف؟</option><option value="1">ماذا أريد أن أعرف؟</option><option value="2">ماذا تعلمت؟</option></select><button class="btn sm" id="kwlAdd">إضافة</button></div>
+    </div>
   </div>
 </div>
 </section>
@@ -855,9 +856,9 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
     <div class="hadith" style="margin-top:10px">عن سفيان بن عبد الله الثقفي رضي الله عنه قال: قلت: يا رسول الله، قل لي في الإسلام قولًا لا أسأل عنه أحدًا غيرك، قال: «قل: آمنتُ بالله، ثم استقم».<span class="src">رواه مسلم (٣٨)</span></div>
     <p style="font-weight:700;margin:6px 0 12px">بالتعاون مع زميلاتك: اقترحي أسبابًا تعين على الاستقامة، واستنتجي ثمرات تحقيقها وعواقب تركها.</p>
     <div class="grid3">
-      <button class="flip" data-flip><div class="in"><div class="f"><span class="tag">أسباب</span><b>ما الذي يعين على الاستقامة؟</b><span class="hint2">المسي البطاقة للمقارنة</span></div><div class="b"><p>الإخلاص لله، وطلب العلم، والرفقة الصالحة، والإكثار من الدعاء وذكر الله، ومحاسبة النفس.</p></div></div></button>
-      <button class="flip" data-flip><div class="in"><div class="f"><span class="tag s">ثمرات</span><b>ماذا تثمر الاستقامة؟</b><span class="hint2">المسي البطاقة للمقارنة</span></div><div class="b"><p>طمأنينة القلب، ومحبة الله وتوفيقه، والثبات عند الفتن، وحسن الخاتمة، والفوز بالجنة.</p></div></div></button>
-      <button class="flip" data-flip><div class="in"><div class="f"><span class="tag c">عواقب</span><b>ماذا يجرّ تركُها؟</b><span class="hint2">المسي البطاقة للمقارنة</span></div><div class="b"><p>التخبط والحيرة، واتباع الهوى، وضعف الإيمان، والتعرض لعقوبة الله في الدنيا والآخرة.</p></div></div></button>
+      <button class="flip" data-flip><div class="in"><div class="f"><span class="tag">أسباب</span><b>ما الذي يعين على الاستقامة؟</b><span class="hint2">👆 المسي البطاقة لتظهر الإجابة</span></div><div class="b"><p>الإخلاص لله، وطلب العلم، والرفقة الصالحة، والإكثار من الدعاء وذكر الله، ومحاسبة النفس.</p></div></div></button>
+      <button class="flip" data-flip><div class="in"><div class="f"><span class="tag s">ثمرات</span><b>ماذا تثمر الاستقامة؟</b><span class="hint2">👆 المسي البطاقة لتظهر الإجابة</span></div><div class="b"><p>طمأنينة القلب، ومحبة الله وتوفيقه، والثبات عند الفتن، وحسن الخاتمة، والفوز بالجنة.</p></div></div></button>
+      <button class="flip" data-flip><div class="in"><div class="f"><span class="tag c">عواقب</span><b>ماذا يَجُرُّ تَرْكُها؟</b><span class="hint2">👆 المسي البطاقة لتظهر الإجابة</span></div><div class="b"><p>التخبط والحيرة، واتباع الهوى، وضعف الإيمان، والتعرض لعقوبة الله في الدنيا والآخرة.</p></div></div></button>
     </div>
   </div>
 </div>
@@ -1018,8 +1019,8 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
     <svg class="links" id="heartLinks"></svg>
     <button class="sat"><span class="q-mark">١</span><span class="txt">تعلّق القلب بالله</span></button>
     <button class="sat"><span class="q-mark">٢</span><span class="txt">الاعتماد على الله في قضاء الحوائج وتفريج الكُرَب</span></button>
-    <button class="sat"><span class="q-mark">٣</span><span class="txt">الترفّع عمّا في أيدي الناس</span></button>
-    <button class="sat"><span class="q-mark">٤</span><span class="txt">فراغ القلب من التعلق بما يقدّمونه من عونٍ ونُصرة</span></button>
+    <button class="sat"><span class="q-mark">٣</span><span class="txt">الترفّع عمّا في أيدي الناس، وفراغ القلب من التعلق بما يقدّمونه من عونٍ ونُصرة</span></button>
+    <button class="sat"><span class="q-mark">٤</span><span class="txt">التوكل لا ينافي العمل بالأسباب:<br>الالتفات إلى الأسباب شرك،<br>وترك العمل بالأسباب عجز وتواكل</span></button>
     <div class="heart-core"><svg viewBox="0 0 120 120"><g class="beat"><path d="M60 104S14 76 14 44a24 24 0 0146-10 24 24 0 0146 10c0 32-46 60-46 60z" fill="var(--coral)"/><path d="M60 92S26 70 26 46a14 14 0 0134-6" fill="none" stroke="#fff" stroke-width="3" opacity=".35" stroke-linecap="round"/></g><text x="60" y="62" text-anchor="middle" font-family="Kufi" font-weight="700" font-size="17" fill="#fff">التوكل</text></svg></div>
   </div>
 </div>
@@ -1179,7 +1180,7 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
 <aside class="drawer" id="drawer" aria-label="لوحة المعلمة">
   <header><b>لوحة المعلمة</b><button class="ib" id="drClose" aria-label="إغلاق"><svg><use href="#i-x"/></svg></button></header>
   <div class="tabs" role="tablist">
-    <button role="tab" aria-selected="true" data-tab="teams">الفرق</button>
+    <button role="tab" aria-selected="true" data-tab="teams">المجموعات</button>
     <button role="tab" aria-selected="false" data-tab="timer">المؤقت</button>
     <button role="tab" aria-selected="false" data-tab="names">الطالبات</button>
     <button role="tab" aria-selected="false" data-tab="plan">خطة الحصة</button>
@@ -1362,7 +1363,7 @@ $("#btnTimer").onclick=()=>openDrawer("timer");
 $$("[data-timer]").forEach(b=>b.addEventListener("click",()=>startTimer(+b.dataset.timer)));
 
 /* ---------- picker ---------- */
-const defNames=Array.from({length:30},(_,i)=>"طالبة "+ar(i+1));
+const defNames=Array.from({length:14},(_,i)=>"طالبة "+ar(i+1));
 let names=store.get("names",defNames),picked=store.get("picked",[]);
 $("#names").value=names.join("\n");
 $("#saveNames").onclick=()=>{names=$("#names").value.split("\n").map(s=>s.trim()).filter(Boolean);if(!names.length)names=defNames;picked=[];store.set("names",names);store.set("picked",picked);toast("حُفظت "+ar(names.length)+" أسماء")};
