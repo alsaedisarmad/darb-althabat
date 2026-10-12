@@ -34,7 +34,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 button{cursor:pointer}
 ::selection{background:var(--sand)}
 .q{font-family:"Mushaf",serif;font-weight:400;line-height:2.25}
-.kufi{font-family:"Kufi","Body",sans-serif}
+.kufi{font-family:"Body",sans-serif;font-weight:800}
 [hidden]{display:none!important}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 :focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:10px}
@@ -53,7 +53,7 @@ button{cursor:pointer}
 .moe{width:74px;height:62px;flex:none;background:var(--emerald);-webkit-mask:url(__LOGO__) center/contain no-repeat;mask:url(__LOGO__) center/contain no-repeat}
 .top .sep{width:1px;height:34px;background:var(--line)}
 .crumb{min-width:0;line-height:1.35}
-.crumb b{display:block;font-family:"Kufi";font-weight:600;font-size:1.02rem;color:var(--emerald);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.crumb b{display:block;font-family:"Body";font-weight:600;font-size:1.02rem;color:var(--emerald);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .crumb span{font-size:.8rem;color:var(--ink2);white-space:nowrap}
 .top .tools{margin-inline-start:auto;display:flex;gap:6px;align-items:center}
 .ib{width:42px;height:42px;border-radius:13px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;transition:transform .2s cubic-bezier(.3,1.6,.5,1),background .2s,border-color .2s;position:relative;overflow:hidden}
@@ -73,13 +73,13 @@ button{cursor:pointer}
 .station.active{visibility:visible}
 .wrap{max-width:1180px;margin:0 auto;position:relative}
 .kicker{display:inline-flex;align-items:center;gap:10px;font-size:.84rem;font-weight:700;color:var(--teal);letter-spacing:0}
-.kicker .no{font-family:"Kufi";background:var(--mint);color:var(--emerald);border-radius:999px;padding:2px 12px}
+.kicker .no{font-family:"Body";background:var(--mint);color:var(--emerald);border-radius:999px;padding:2px 12px}
 .kicker .rule{width:36px;height:2px;background:var(--saffron);border-radius:2px}
 h2.title{font-family:"Kufi";font-weight:700;font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.3;margin:.25em 0 .2em;color:var(--ink)}
 h2.title em{font-style:normal;color:var(--coral);position:relative;white-space:nowrap}
 h2.title em::after{content:"";position:absolute;inset:auto 0 .02em 0;height:.16em;background:var(--sand);z-index:-1;border-radius:4px}
 .lead{font-size:1.12rem;color:var(--ink2);max-width:62ch;margin:0 0 22px}
-h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-height:1.5}
+h3{font-family:"Body";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-height:1.5}
 .grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
 .grid2.even{grid-template-columns:1fr 1fr}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -147,8 +147,8 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .dot .lbl{display:none;position:absolute;bottom:26px;left:50%;transform:translateX(-50%) translateY(4px);white-space:nowrap;font-size:.72rem;font-weight:800;background:var(--ink);color:var(--paper);padding:2px 9px;border-radius:8px;opacity:0;pointer-events:none;transition:.2s}
 .dot:hover .lbl,.dot.cur .lbl{opacity:1;transform:translateX(-50%) translateY(0)}
 .dot.chap::after{content:"";position:absolute;top:-12px;left:50%;width:2px;height:7px;background:var(--saffron);transform:translateX(-50%)}
-.counter{font-family:"Kufi";font-weight:700;color:var(--ink2);font-size:.95rem;flex:none;min-width:64px;text-align:center}
-@media (max-width:700px){#btnFont,#btnFull,#btnSound{display:none}.counter{display:none}.top .sep,.crumb span{display:none}.moe{width:58px}.score-pill{display:none}}
+.counter{font-family:"Body";font-weight:700;color:var(--ink2);font-size:.95rem;flex:none;min-width:64px;text-align:center}
+@media (max-width:700px){#btnFont,#btnFull,#btnSound{display:none}.crumb b{white-space:normal;font-size:.95rem;line-height:1.3}.counter{display:none}.top .sep,.crumb span{display:none}.moe{width:58px}.score-pill{display:none}}
 
 /* ---------- cover ---------- */
 .cover{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;min-height:calc(100vh - 230px)}
@@ -156,15 +156,15 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .cover .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .cover h1{font-family:"Mushaf";font-weight:400;font-size:clamp(2.3rem,4.6vw,4.4rem);line-height:1.7;white-space:nowrap;margin:0;color:var(--emerald)}
 .cover h1 .orn{color:var(--saffron)}
-.cover .sub{font-family:"Kufi";font-size:clamp(1.2rem,2.2vw,1.65rem);font-weight:600;margin:0 0 6px}
-.cover .brand{font-family:"Kufi";font-size:1rem;color:var(--coral);font-weight:700;letter-spacing:0}
+.cover .sub{font-family:"Body";font-size:clamp(1.2rem,2.2vw,1.65rem);font-weight:600;margin:0 0 6px}
+.cover .brand{font-family:"Body";font-size:1rem;color:var(--coral);font-weight:700;letter-spacing:0}
 .people{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
 @media (max-width:560px){.people{grid-template-columns:1fr}}
 .person{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 14px}
 .person .av{width:46px;height:46px;border-radius:14px;flex:none;display:grid;place-items:center;background:var(--mint)}
 .person .av svg{width:26px;height:26px;stroke:var(--emerald);fill:none;stroke-width:1.7}
 .person small{display:block;color:var(--ink2);font-size:.78rem;line-height:1.4}
-.person b{font-family:"Kufi";font-size:1.12rem;font-weight:700;line-height:1.5}
+.person b{font-family:"Body";font-size:1.12rem;font-weight:700;line-height:1.5}
 .hero-art{position:relative;aspect-ratio:1/1.05;max-height:66vh;margin-inline:auto;width:100%}
 .hero-art svg{width:100%;height:100%;overflow:visible}
 .draw{stroke-dasharray:var(--len,1000);stroke-dashoffset:var(--len,1000)}
@@ -182,9 +182,9 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .rule-card:hover{transform:translateY(-4px)}
 .rule-card .ico{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;background:var(--paper2)}
 .rule-card .ico svg{width:34px;height:34px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.rule-card b{font-family:"Kufi";font-size:1.18rem;font-weight:700}
+.rule-card b{font-family:"Body";font-size:1.18rem;font-weight:700}
 .rule-card span{color:var(--ink2);font-size:.93rem;line-height:1.7}
-.rule-card .stamp{position:absolute;inset-inline-end:14px;top:14px;width:70px;height:70px;border-radius:50%;border:3px double var(--coral);color:var(--coral);display:grid;place-items:center;font-family:"Kufi";font-weight:700;font-size:.8rem;transform:rotate(-18deg) scale(2.2);opacity:0;transition:transform .45s cubic-bezier(.3,1.8,.5,1),opacity .2s}
+.rule-card .stamp{position:absolute;inset-inline-end:14px;top:14px;width:70px;height:70px;border-radius:50%;border:3px double var(--coral);color:var(--coral);display:grid;place-items:center;font-family:"Body";font-weight:700;font-size:.8rem;transform:rotate(-18deg) scale(2.2);opacity:0;transition:transform .45s cubic-bezier(.3,1.8,.5,1),opacity .2s}
 .rule-card.signed{border-color:var(--teal);background:color-mix(in srgb,var(--mint) 45%,var(--card))}
 .rule-card.signed .stamp{opacity:1;transform:rotate(-18deg) scale(1)}
 
@@ -193,7 +193,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 :root[data-theme="night"] .dawn{background:linear-gradient(170deg,#1b2647,#6b3b2c 60%,#9a6a1c)}
 .dawn .sun{position:absolute;width:300px;height:300px;border-radius:50%;left:50%;bottom:-170px;transform:translateX(-50%);background:radial-gradient(circle,#FFE6A6 0%,#F5B54A 45%,transparent 70%);transition:bottom 2s cubic-bezier(.2,.8,.2,1)}
 .station.active .dawn .sun{bottom:-120px}
-.dawn blockquote{margin:0;font-family:"Kufi";font-size:clamp(1.6rem,3.6vw,2.7rem);line-height:1.7;font-weight:600;position:relative;max-width:26ch}
+.dawn blockquote{margin:0;font-family:"Body";font-size:clamp(1.6rem,3.6vw,2.7rem);line-height:1.7;font-weight:600;position:relative;max-width:26ch}
 .dawn blockquote .w{display:inline-block;opacity:0;transform:translateY(14px);filter:blur(6px);transition:all .6s cubic-bezier(.2,.8,.2,1)}
 .dawn blockquote .w.in{opacity:1;transform:none;filter:none}
 .dawn cite{display:block;margin-top:18px;font-style:normal;font-weight:700;opacity:.85;position:relative}
@@ -206,7 +206,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .env .body{position:relative;height:100%;min-height:200px;border-radius:20px;background:var(--card);border:1.5px solid var(--line);padding:56px 18px 16px;overflow:hidden;transition:border-color .3s}
 .env .flap{position:absolute;inset:0 0 auto 0;height:96px;transform-origin:top;transition:transform .7s cubic-bezier(.4,1.4,.5,1);z-index:2}
 .env .flap svg{width:100%;height:100%}
-.env .seal{position:absolute;top:66px;left:50%;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-family:"Kufi";font-weight:700;font-size:1.3rem;z-index:3;box-shadow:0 4px 0 color-mix(in srgb,var(--coral) 60%,#000);transition:transform .45s cubic-bezier(.4,1.6,.5,1),opacity .3s}
+.env .seal{position:absolute;top:66px;left:50%;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-family:"Body";font-weight:700;font-size:1.3rem;z-index:3;box-shadow:0 4px 0 color-mix(in srgb,var(--coral) 60%,#000);transition:transform .45s cubic-bezier(.4,1.6,.5,1),opacity .3s}
 .env .content{opacity:0;transform:translateY(16px);transition:all .5s .25s}
 .env.open .flap{transform:rotateX(180deg)}
 .env.open .seal{transform:translateX(-50%) scale(0) rotate(90deg);opacity:0}
@@ -230,7 +230,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .kwl{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media (max-width:760px){.kwl{grid-template-columns:1fr}}
 .kcol{border-radius:22px;padding:14px;min-height:190px;border:1.5px dashed var(--line);background:color-mix(in srgb,var(--card) 70%,transparent)}
-.kcol h4{margin:0 0 10px;font-family:"Kufi";font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:8px}
+.kcol h4{margin:0 0 10px;font-family:"Body";font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:8px}
 .kcol h4 i{width:12px;height:12px;border-radius:4px;display:inline-block}
 .sticky{padding:9px 12px;border-radius:12px;margin:0 0 8px;font-weight:700;font-size:.95rem;box-shadow:0 6px 12px -8px #0006;position:relative;animation:pop .4s cubic-bezier(.3,1.7,.5,1);display:flex;gap:8px;align-items:flex-start;justify-content:space-between;color:#1C2A28}
 .sticky button{border:0;background:none;opacity:.5;padding:0 2px;font-size:1rem;line-height:1;color:inherit}
@@ -239,7 +239,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .kadd select{border:1.5px solid var(--line);background:var(--card);border-radius:14px;padding:10px}
 .goal{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:20px;background:var(--card);border:1px solid var(--line);margin-bottom:12px;transition:transform .3s}
 .goal:hover{transform:translateX(-6px)}
-.goal .n{font-family:"Kufi";font-weight:700;font-size:1.6rem;width:52px;height:52px;flex:none;border-radius:16px;display:grid;place-items:center;color:#fff}
+.goal .n{font-family:"Body";font-weight:700;font-size:1.6rem;width:52px;height:52px;flex:none;border-radius:16px;display:grid;place-items:center;color:#fff}
 .goal p{margin:0;font-weight:700;line-height:1.8}
 
 /* ---------- mushaf ---------- */
@@ -276,7 +276,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .player .t{font-variant-numeric:tabular-nums;font-size:.85rem;opacity:.9;flex:none}
 .player .spd{border:1px solid color-mix(in srgb,var(--on-emerald) 40%,transparent);background:transparent;color:inherit;border-radius:10px;padding:4px 10px;font-weight:800;font-size:.82rem}
 .tafsir{position:sticky;top:0}
-.tafsir .ref{font-family:"Kufi";font-size:2.6rem;font-weight:700;color:var(--saffron);line-height:1}
+.tafsir .ref{font-family:"Body";font-size:2.6rem;font-weight:700;color:var(--saffron);line-height:1}
 .tafsir .txt{font-size:1.08rem;font-weight:700;line-height:1.95;margin:10px 0 0}
 .tafsir .theme{display:inline-block;margin-top:8px}
 .word-list{display:grid;gap:8px;margin-top:12px}
@@ -300,7 +300,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .minute .ring circle{fill:none;stroke-width:7}
 .minute .ring .bg{stroke:var(--paper2)}
 .minute .ring .fg{stroke:var(--coral);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1s linear}
-.minute .ring text{font-family:"Kufi";font-weight:700;font-size:15px;fill:var(--ink)}
+.minute .ring text{font-family:"Body";font-weight:700;font-size:15px;fill:var(--ink)}
 
 /* ---------- story ---------- */
 .story{position:relative;border-radius:32px;overflow:hidden;background:var(--card);border:1px solid var(--line);min-height:400px;box-shadow:var(--shadow)}
@@ -310,7 +310,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 @media (max-width:760px){.scene{grid-template-columns:1fr;padding:22px}.story{min-height:640px}}
 .scene .art{aspect-ratio:1;max-height:300px;margin:auto;width:100%}
 .scene .art svg{width:100%;height:100%}
-.scene .step{font-family:"Kufi";color:var(--coral);font-weight:700}
+.scene .step{font-family:"Body";color:var(--coral);font-weight:700}
 .scene h3{font-size:1.7rem}
 .scene p{font-size:1.1rem;font-weight:700;line-height:1.9;margin:0}
 .stepper{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:16px}
@@ -343,7 +343,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .key{border:1.5px solid var(--line);background:var(--card);border-radius:20px;padding:18px;min-height:110px;display:grid;place-items:center;text-align:center;font-weight:800;font-size:1.1rem;position:relative;overflow:hidden}
 .key .lock{transition:transform .5s cubic-bezier(.3,1.6,.5,1),opacity .3s;display:grid;place-items:center;gap:4px}
 .key .lock svg{width:34px;height:34px;stroke:var(--saffron);fill:none;stroke-width:2}
-.key .val{position:absolute;inset:0;display:grid;place-items:center;padding:14px;opacity:0;transform:translateY(20px);transition:all .5s .15s;color:var(--emerald);font-family:"Kufi";font-size:1.35rem}
+.key .val{position:absolute;inset:0;display:grid;place-items:center;padding:14px;opacity:0;transform:translateY(20px);transition:all .5s .15s;color:var(--emerald);font-family:"Body";font-size:1.35rem}
 .key.open{border-color:var(--teal);background:var(--mint)}
 .key.open .lock{transform:translateY(-60px);opacity:0}
 .key.open .val{opacity:1;transform:none}
@@ -356,7 +356,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .village .cloud{transition:opacity .9s,transform 1.2s}
 .range{width:100%;accent-color:var(--saffron);height:34px}
 .range-row{display:flex;align-items:center;gap:14px;font-weight:800}
-.range-row output{font-family:"Kufi";font-size:1.6rem;color:var(--coral);min-width:2ch;text-align:center}
+.range-row output{font-family:"Body";font-size:1.6rem;color:var(--coral);min-width:2ch;text-align:center}
 
 /* ---------- flip ---------- */
 .flip{perspective:1100px;border:0;background:none;padding:0;min-height:240px;text-align:start;display:block;width:100%;color:var(--ink)}
@@ -378,7 +378,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .heart-core .beat{transform-origin:50% 55%;animation:beat 1.6s ease-in-out infinite}
 @keyframes beat{12%{transform:scale(1.08)}24%{transform:scale(1)}36%{transform:scale(1.05)}48%{transform:scale(1)}}
 .sat{position:absolute;width:min(270px,42%);border:1.5px solid var(--line);background:var(--card);border-radius:20px;padding:14px 16px;font-weight:800;text-align:center;line-height:1.7;transition:transform .35s cubic-bezier(.3,1.6,.5,1),border-color .3s,background .3s}
-.sat .q-mark{font-family:"Kufi";color:var(--saffron);font-size:1.5rem;display:block;line-height:1.2}.sat .q-mark::after{content:"المسي لتكشفي العبادة";display:block;font-family:"Body";font-size:.82rem;color:var(--ink2);font-weight:700;margin-top:4px}
+.sat .q-mark{font-family:"Body";color:var(--saffron);font-size:1.5rem;display:block;line-height:1.2}.sat .q-mark::after{content:"المسي لتكشفي العبادة";display:block;font-family:"Body";font-size:.82rem;color:var(--ink2);font-weight:700;margin-top:4px}
 .sat .txt{display:none}
 .sat.on{border-color:var(--teal);background:var(--mint);color:var(--emerald)}
 .sat.on .txt{display:block;animation:pop .4s}
@@ -389,7 +389,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 /* ---------- ladder ---------- */
 .ladder{display:grid;gap:10px;counter-reset:l}
 .rung{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:18px;background:var(--card);border:1.5px solid var(--line);font-weight:800;font-size:1.08rem;position:relative}
-.rung::before{counter-increment:l;content:counter(l,arabic-indic);font-family:"Kufi";width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--paper2);color:var(--ink2);flex:none}
+.rung::before{counter-increment:l;content:counter(l,arabic-indic);font-family:"Body";width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--paper2);color:var(--ink2);flex:none}
 .rung .q{font-size:1.2rem;color:var(--emerald);flex:1}
 .rung .mv{display:flex;gap:6px}
 .rung .mv button{width:38px;height:38px;border-radius:11px;border:1.5px solid var(--line);background:var(--paper);display:grid;place-items:center}
@@ -405,7 +405,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 @media (max-width:760px){.binz{grid-template-columns:1fr}}
 .bin{border:2px dashed var(--line);border-radius:22px;padding:14px;min-height:170px;transition:border-color .25s,background .25s,transform .25s;background:var(--card);text-align:start}
 .bin.hot{border-color:var(--saffron);background:color-mix(in srgb,var(--sand) 35%,var(--card));transform:scale(1.02)}
-.bin h4{margin:0 0 10px;font-family:"Kufi";font-weight:700;display:flex;align-items:center;gap:8px}
+.bin h4{margin:0 0 10px;font-family:"Body";font-weight:700;display:flex;align-items:center;gap:8px}
 .bin .items{display:flex;flex-wrap:wrap;gap:8px}
 .bin .chip{font-family:"Mushaf";font-weight:400;font-size:1.15rem;padding:4px 12px}
 
@@ -422,7 +422,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 @media (max-width:640px){.match{grid-template-columns:1fr;gap:18px}.match svg.wires{display:none}}
 
 /* ---------- tajweed ---------- */
-.bayt{font-family:"Kufi";font-size:clamp(1.1rem,2.4vw,1.5rem);line-height:2;text-align:center;padding:14px;border-radius:18px;background:var(--paper2)}
+.bayt{font-family:"Body";font-size:clamp(1.1rem,2.4vw,1.5rem);line-height:2;text-align:center;padding:14px;border-radius:18px;background:var(--paper2)}
 .bayt span{color:var(--coral);font-weight:700}
 .hunt{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .hunt .chip{font-family:"Mushaf";font-weight:400;font-size:1.5rem;padding:6px 18px;line-height:2}
@@ -437,11 +437,11 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .qsteps i{width:28px;height:8px;border-radius:8px;background:var(--line);transition:background .3s}
 .qsteps i.ok{background:var(--teal)}.qsteps i.no{background:var(--coral)}.qsteps i.cur{background:var(--saffron)}
 .qcard{animation:pop .5s cubic-bezier(.3,1.5,.5,1)}
-.qcard .qq{font-family:"Kufi";font-weight:600;font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.8;margin:0 0 16px}
+.qcard .qq{font-family:"Body";font-weight:600;font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.8;margin:0 0 16px}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (max-width:620px){.opts{grid-template-columns:1fr}}
 .opt{display:flex;gap:12px;align-items:center;text-align:start;padding:14px 16px;border-radius:18px;border:1.5px solid var(--line);background:var(--card);font-weight:800;font-size:1.04rem;transition:transform .25s cubic-bezier(.3,1.6,.5,1),border-color .25s,background .25s}
-.opt .L{width:36px;height:36px;border-radius:11px;background:var(--paper2);display:grid;place-items:center;font-family:"Kufi";flex:none}
+.opt .L{width:36px;height:36px;border-radius:11px;background:var(--paper2);display:grid;place-items:center;font-family:"Body";flex:none}
 .opt:hover{border-color:var(--teal)}
 .opt.ok{border-color:var(--teal);background:var(--mint);color:var(--emerald)}
 .opt.ok .L{background:var(--teal);color:#fff}
@@ -449,14 +449,14 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .opt.no .L{background:var(--coral);color:#fff}
 .opt .q{font-size:1.15rem}
 .result{text-align:center;padding:30px}
-.result .big{font-family:"Kufi";font-weight:700;font-size:4.5rem;color:var(--emerald);line-height:1.2}
+.result .big{font-family:"Body";font-weight:700;font-size:4.5rem;color:var(--emerald);line-height:1.2}
 
 /* ---------- exit card ---------- */
 .ticket{position:relative;border-radius:30px;padding:30px;color:#FFF8EA;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:space-between;background:var(--tk,#0F5245)}
 .ticket::before{content:"";position:absolute;inset:0;opacity:.13;background:#fff;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%23000' stroke-width='2'%3E%3Crect x='27' y='27' width='30' height='30'/%3E%3Crect x='27' y='27' width='30' height='30' transform='rotate(45 42 42)'/%3E%3C/g%3E%3C/svg%3E") 0 0/60px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%23000' stroke-width='2'%3E%3Crect x='27' y='27' width='30' height='30'/%3E%3Crect x='27' y='27' width='30' height='30' transform='rotate(45 42 42)'/%3E%3C/g%3E%3C/svg%3E") 0 0/60px}
 .ticket>*{position:relative}
 .ticket .tq{font-family:"Mushaf";font-size:2.2rem;line-height:1.7}
-.ticket .tname{font-family:"Kufi";font-size:1.7rem;font-weight:700}
+.ticket .tname{font-family:"Body";font-size:1.7rem;font-weight:700}
 .ticket .tdeed{font-size:1.25rem;font-weight:800;line-height:1.8}
 .ticket .tfoot{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;font-size:.85rem;opacity:.9}
 .ticket .tlogo{width:70px;height:58px;background:#FFF8EA;-webkit-mask:url(__LOGO__) center/contain no-repeat;mask:url(__LOGO__) center/contain no-repeat}
@@ -471,7 +471,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .end-hero{text-align:center;padding:30px 10px}
 .end-hero h2{font-family:"Kufi";font-size:clamp(2.2rem,5vw,3.8rem);margin:.2em 0;line-height:1.3}
 .qwords{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.qwords .chip{font-family:"Kufi";font-size:1.25rem;min-width:84px}
+.qwords .chip{font-family:"Body";font-size:1.25rem;min-width:84px}
 .qprompt{margin-top:14px;font-size:1.15rem;font-weight:800;min-height:2em;text-align:center}
 
 /* ---------- overlays / drawer ---------- */
@@ -479,7 +479,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 :root[dir="rtl"] .drawer{transform:translateX(105%)}
 .drawer.open{transform:none!important}
 .drawer header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--line)}
-.drawer header b{font-family:"Kufi";font-size:1.25rem}
+.drawer header b{font-family:"Body";font-size:1.25rem}
 .drawer .tabs{display:flex;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);overflow-x:auto}
 .drawer .tabs button{border:0;background:transparent;font-weight:800;padding:8px 12px;border-radius:12px;color:var(--ink2);white-space:nowrap}
 .drawer .tabs button[aria-selected="true"]{background:var(--emerald);color:var(--on-emerald)}
@@ -488,8 +488,8 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .scrim.on{opacity:1;pointer-events:auto}
 .team{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;background:var(--card);border:1px solid var(--line);margin-bottom:10px}
 .team .sw{width:14px;height:40px;border-radius:6px}
-.team b{flex:1;font-family:"Kufi";font-size:1.05rem}
-.team .pts{font-family:"Kufi";font-size:1.6rem;font-weight:700;min-width:2ch;text-align:center}
+.team b{flex:1;font-family:"Body";font-size:1.05rem}
+.team .pts{font-family:"Body";font-size:1.6rem;font-weight:700;min-width:2ch;text-align:center}
 .team button{width:40px;height:40px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);font-size:1.3rem;font-weight:800}
 .tpresets{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
 .big-timer{position:fixed;z-index:70;inset-inline-end:20px;bottom:104px;width:150px;height:150px;border-radius:50%;background:var(--card);box-shadow:0 20px 50px -10px #0007;display:grid;place-items:center;cursor:pointer;transition:transform .4s cubic-bezier(.3,1.6,.5,1),width .4s,height .4s;border:1px solid var(--line)}
@@ -498,7 +498,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .big-timer svg{position:absolute;inset:0;width:100%;height:100%}
 .big-timer circle{fill:none;stroke-width:6}
 .big-timer .fg{stroke:var(--saffron);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1s linear,stroke .3s}
-.big-timer .num{font-family:"Kufi";font-weight:700;font-size:2.2rem;position:relative;font-variant-numeric:tabular-nums}
+.big-timer .num{font-family:"Body";font-weight:700;font-size:2.2rem;position:relative;font-variant-numeric:tabular-nums}
 .big-timer.huge .num{font-size:6rem}
 .big-timer.warn .fg{stroke:var(--coral)}
 .big-timer.warn .num{color:var(--coral);animation:bump 1s infinite}
@@ -508,7 +508,7 @@ h3{font-family:"Kufi";font-weight:600;font-size:1.35rem;margin:0 0 8px;line-heig
 .spot .box{background:var(--paper);border-radius:34px;padding:40px 50px;text-align:center;min-width:min(520px,90vw);transform:scale(.8);transition:transform .5s cubic-bezier(.3,1.6,.5,1);position:relative;overflow:hidden}
 .spot.on .box{transform:none}
 .spot .box small{font-weight:800;color:var(--teal);font-size:1rem}
-.spot .box .nm{font-family:"Kufi";font-size:clamp(2.4rem,7vw,4.2rem);font-weight:700;color:var(--emerald);line-height:1.5;min-height:1.5em}
+.spot .box .nm{font-family:"Body";font-size:clamp(2.4rem,7vw,4.2rem);font-weight:700;color:var(--emerald);line-height:1.5;min-height:1.5em}
 .spot .box .nm.roll{color:var(--ink2);filter:blur(1px)}
 #fx{position:fixed;inset:0;z-index:90;pointer-events:none}
 .toast{position:fixed;z-index:95;left:50%;top:84px;transform:translate(-50%,-30px);opacity:0;background:var(--ink);color:var(--paper);padding:10px 20px;border-radius:14px;font-weight:800;transition:all .4s cubic-bezier(.3,1.6,.5,1);pointer-events:none}
@@ -835,8 +835,8 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
           <path d="M110 120l-40 70M110 120l40 70M450 120l-40 70M450 120l40 70" stroke="var(--ink2)" stroke-width="2"/>
           <path d="M60 190h100a50 22 0 01-100 0z" fill="var(--coral)"/>
           <path d="M400 190h100a50 22 0 01-100 0z" fill="var(--indigo)"/>
-          <text x="110" y="232" text-anchor="middle" font-family="Kufi" font-size="17" fill="var(--coral)">غلوّ</text>
-          <text x="450" y="232" text-anchor="middle" font-family="Kufi" font-size="17" fill="var(--indigo)">تفريط</text>
+          <text x="110" y="232" text-anchor="middle" font-family="Body" font-weight="800" font-size="17" fill="var(--coral)">غلوّ</text>
+          <text x="450" y="232" text-anchor="middle" font-family="Body" font-weight="800" font-size="17" fill="var(--indigo)">تفريط</text>
         </g>
         <circle cx="280" cy="112" r="14" fill="var(--saffron)"/>
         <path d="M280 98V66" stroke="var(--saffron)" stroke-width="4" stroke-linecap="round"/>
@@ -1021,7 +1021,7 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
     <button class="sat"><span class="q-mark">٢</span><span class="txt">الاعتماد على الله في قضاء الحوائج وتفريج الكُرَب</span></button>
     <button class="sat"><span class="q-mark">٣</span><span class="txt">الترفّع عمّا في أيدي الناس، وفراغ القلب من التعلق بما يقدّمونه من عونٍ ونُصرة</span></button>
     <button class="sat"><span class="q-mark">٤</span><span class="txt">التوكل لا ينافي العمل بالأسباب:<br>الالتفات إلى الأسباب شرك،<br>وترك العمل بالأسباب عجز وتواكل</span></button>
-    <div class="heart-core"><svg viewBox="0 0 120 120"><g class="beat"><path d="M60 104S14 76 14 44a24 24 0 0146-10 24 24 0 0146 10c0 32-46 60-46 60z" fill="var(--coral)"/><path d="M60 92S26 70 26 46a14 14 0 0134-6" fill="none" stroke="#fff" stroke-width="3" opacity=".35" stroke-linecap="round"/></g><text x="60" y="62" text-anchor="middle" font-family="Kufi" font-weight="700" font-size="17" fill="#fff">التوكل</text></svg></div>
+    <div class="heart-core"><svg viewBox="0 0 120 120"><g class="beat"><path d="M60 104S14 76 14 44a24 24 0 0146-10 24 24 0 0146 10c0 32-46 60-46 60z" fill="var(--coral)"/><path d="M60 92S26 70 26 46a14 14 0 0134-6" fill="none" stroke="#fff" stroke-width="3" opacity=".35" stroke-linecap="round"/></g><text x="60" y="62" text-anchor="middle" font-family="Body" font-weight="800" font-size="17" fill="#fff">التوكل</text></svg></div>
   </div>
 </div>
 </section>
@@ -1191,8 +1191,8 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
   <div class="pane" data-pane="plan" hidden>
     <table class="plan">
       <tr><td>الميثاق والإشراقة ومراجعة الدرس السابق</td><td>٥ د</td></tr>
-      <tr><td>التمهيد والأهداف وجدول التعلم</td><td>٤ د</td></tr>
-      <tr><td>التلاوة والمعنى الإجمالي والمفردات</td><td>٩ د</td></tr>
+      <tr><td>التمهيد ثم التلاوة والمعنى الإجمالي</td><td>٩ د</td></tr>
+      <tr><td>الأهداف وجدول التعلم والمفردات</td><td>٤ د</td></tr>
       <tr><td>سبب النزول والاستقامة ولا تركنوا</td><td>٩ د</td></tr>
       <tr><td>الصلاة والمصلحون والقصص والتوكل</td><td>٩ د</td></tr>
       <tr><td>نشاط من «نطبّق» + التقويم الختامي</td><td>٦ د</td></tr>
@@ -1533,7 +1533,7 @@ $("#rkNext").onclick=()=>{ri2++;rkShow()};rkShow();
 /* ---------- prayer arc ---------- */
 const PR=[["الفجر",.08,"a"],["الظهر",.5,"b"],["العصر",.68,"b"],["المغرب",.86,"c"],["العشاء",.97,"c"]];
 const cx=260,cy=220,rx=230,ry=190;
-$("#pnodes").innerHTML=PR.map(([n,t,g],i)=>{const a=Math.PI*t,x=cx+rx*Math.cos(a),y=cy-ry*Math.sin(a);const lx=cx+(rx+30)*Math.cos(a),ly=cy-(ry+26)*Math.sin(a)+6,anc=Math.cos(a)>.35?"start":Math.cos(a)<-.35?"end":"middle";return `<g class="pnode" data-g="${g}"><circle cx="${x}" cy="${y}" r="15" fill="var(--card)" stroke="var(--line)" stroke-width="3"/><text x="${lx}" y="${ly}" text-anchor="${anc}" font-family="Kufi" font-size="17" fill="var(--ink)">${n}</text></g>`}).join("")+
+$("#pnodes").innerHTML=PR.map(([n,t,g],i)=>{const a=Math.PI*t,x=cx+rx*Math.cos(a),y=cy-ry*Math.sin(a);const lx=cx+(rx+30)*Math.cos(a),ly=cy-(ry+26)*Math.sin(a)+6,anc=Math.cos(a)>.35?"start":Math.cos(a)<-.35?"end":"middle";return `<g class="pnode" data-g="${g}"><circle cx="${x}" cy="${y}" r="15" fill="var(--card)" stroke="var(--line)" stroke-width="3"/><text x="${lx}" y="${ly}" text-anchor="${anc}" font-family="Body" font-weight="800" font-size="17" fill="var(--ink)">${n}</text></g>`}).join("")+
  `<text x="260" y="140" text-anchor="middle" font-family="Mushaf" font-size="26" fill="var(--emerald)" id="arcLbl">﴿وَأَقِمِ الصَّلَاةَ﴾</text>`;
 const ARCMSG={a:"الطرف الأول من النهار: صلاة الفجر.",b:"الطرف الثاني (آخر النهار): صلاتا الظهر والعصر.",c:"زُلفًا من الليل: صلاتا المغرب والعشاء، ويدخل فيها قيام الليل."};
 const ARCCOL={a:"var(--saffron)",b:"var(--coral)",c:"var(--indigo)"};
@@ -1689,7 +1689,7 @@ async function drawCard(){
   c.fillStyle="#D9961F";c.beginPath();c.roundRect?c.roundRect(R-tw,80,tw,64,32):c.rect(R-tw,80,tw,64);c.fill();
   c.fillStyle="#2a1d02";c.fillText(tag,R-28,124);
   c.fillStyle="#FFF8EA";c.font="84px Mushaf";c.fillText("﴿إِنَّ الْحَسَنَاتِ يُذْهِبْنَ السَّيِّئَاتِ﴾",R,300);
-  c.font="700 76px Kufi";c.fillText(tk.n||"اسم الطالبة",R,540);
+  c.font="800 76px Body";c.fillText(tk.n||"اسم الطالبة",R,540);
   c.font="800 46px Body";const deed=tk.d>=0?"عهدي هذا الأسبوع: "+DEEDS[tk.d]:"اختاري عملك من القائمة";
   wrapLines(c,deed,W-200).slice(0,2).forEach((l,i)=>c.fillText(l,R,640+i*68));
   c.globalAlpha=.9;c.font="400 32px Body";c.fillText("معلمة المادة: أ. فاطمة الطلحي",R,880);c.fillText("مديرة المدرسة: أ. آمال باربود",R,930);c.globalAlpha=1;
