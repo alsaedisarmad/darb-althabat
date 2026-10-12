@@ -1725,6 +1725,7 @@ $$("#qwords .chip").forEach(c=>c.onclick=()=>{$$("#qwords .chip").forEach(x=>x.c
 /* ---------- boot ---------- */
 const start=parseInt((location.hash.match(/s(\d+)/)||[])[1]||0,10);
 go(isNaN(start)?0:start,true);
+if("serviceWorker" in navigator&&location.protocol==="https:")navigator.serviceWorker.register("sw.js").catch(()=>{});
 })();
 </script>
 </body>
