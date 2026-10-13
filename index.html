@@ -599,7 +599,7 @@ textarea.names{width:100%;min-height:200px;border:1.5px solid var(--line);backgr
     </div>
     <div class="row">
       <button class="btn s" data-go="1">ابدئي الرحلة <svg><use href="#i-next"/></svg></button>
-      <button class="btn ghost" data-go="6">إلى الآيات مباشرة</button>
+      <button class="btn ghost" data-go="5">إلى الآيات مباشرة</button>
     </div>
   </div>
   <div class="hero-art" aria-hidden="true">
@@ -1286,9 +1286,12 @@ stations.forEach((s,i)=>{
 function go(i,silent){
   i=Math.max(0,Math.min(N-1,i));if(i===cur)return;
   const dir=i>cur?1:-1,prev=stations[cur],next=stations[i];
-  if(prev){prev.animate([{opacity:1,transform:"none"},{opacity:0,transform:`translateX(${dir*60}px)`}],{duration:380,easing:"cubic-bezier(.4,0,.2,1)"}).onfinish=()=>{if(stations[cur]!==prev)prev.classList.remove("active")};pauseMedia()}
+  stations.forEach(s=>{if(s!==prev&&s!==next){s.getAnimations().forEach(a=>a.cancel());s.classList.remove("active")}});
+  next.getAnimations().forEach(a=>a.cancel());next.style.pointerEvents="";
+  if(prev){prev.getAnimations().forEach(a=>a.cancel());prev.style.pointerEvents="none";
+    prev.animate([{opacity:1,transform:"none"},{opacity:0,transform:`translateX(${dir*40}px)`}],{duration:200,easing:"cubic-bezier(.4,0,1,1)",fill:"forwards"}).onfinish=a=>{if(stations[cur]!==prev)prev.classList.remove("active");prev.style.pointerEvents="";a.target.cancel()};pauseMedia()}
   next.classList.add("active");next.scrollTop=0;
-  next.animate([{opacity:0,transform:`translateX(${-dir*70}px) scale(.985)`},{opacity:1,transform:"none"}],{duration:560,easing:"cubic-bezier(.2,.8,.2,1)"});
+  next.animate([{opacity:0,transform:`translateX(${-dir*50}px)`},{opacity:1,transform:"none"}],{duration:420,delay:prev?190:0,easing:"cubic-bezier(.2,.8,.2,1)",fill:"backwards"});
   cur=i;
   $$(".dot").forEach((d,k)=>{d.classList.toggle("cur",k===i);d.classList.toggle("done",k<i)});
   $("#lineFill").style.width=(i/(N-1)*100)+"%";
